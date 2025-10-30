@@ -1,0 +1,17 @@
+/* Custom cursor styles */
+.cursor-pointer {
+  cursor: pointer !important;
+}
+
+.cursor-text {
+  cursor: text !important;
+}
+
+.focus\:cursor-text:focus {
+  cursor: text !important;
+}
+
+/* Hover effects */
+.hover\:cursor-pointer:hover {
+  cursor: pointer !important;
+}

@@ -1,0 +1,290 @@
+/* Tema customizado baseado na logo da Fidelis Stack */
+
+:root {
+  /* Cores principais baseadas na logo */
+  --color-primary-dark: #0B1B2F;     /* Azul navy escuro da logo */
+  --color-primary-navy: #1A2B42;     /* Azul navy médio */
+  --color-accent-cyan: #00E5FF;      /* Ciano brilhante da logo */
+  --color-accent-blue: #00BCD4;      /* Azul ciano secundário */
+  --color-surface-dark: #0F1419;     /* Fundo ainda mais escuro */
+  --color-surface-light: #1E2A3A;    /* Superfície clara */
+  --color-text-primary: #FFFFFF;     /* Texto branco */
+  --color-text-secondary: #B8C5D1;   /* Texto secundário */
+  --color-text-muted: #8A9BA8;       /* Texto desbotado */
+
+  /* Override das variáveis do sistema */
+  --background: var(--color-primary-dark);
+  --foreground: var(--color-text-primary);
+  --card: var(--color-primary-navy);
+  --card-foreground: var(--color-text-primary);
+  --popover: var(--color-primary-navy);
+  --popover-foreground: var(--color-text-primary);
+  --primary: var(--color-accent-cyan);
+  --primary-foreground: var(--color-primary-dark);
+  --secondary: var(--color-surface-light);
+  --secondary-foreground: var(--color-text-primary);
+  --muted: var(--color-surface-light);
+  --muted-foreground: var(--color-text-muted);
+  --accent: var(--color-accent-blue);
+  --accent-foreground: var(--color-text-primary);
+  --destructive: #FF5252;
+  --destructive-foreground: var(--color-text-primary);
+  --border: rgba(0, 229, 255, 0.2);
+  --input: var(--color-surface-light);
+  --input-background: var(--color-surface-light);
+  --ring: var(--color-accent-cyan);
+
+  /* Override das cores Tailwind */
+  --color-blue-50: #E1F5FE;
+  --color-blue-100: #B3E5FC;
+  --color-blue-200: #81D4FA;
+  --color-blue-400: #29B6F6;
+  --color-blue-500: var(--color-accent-blue);
+  --color-blue-600: var(--color-accent-cyan);
+  --color-blue-700: #0097A7;
+  --color-blue-900: var(--color-primary-dark);
+
+  --color-gray-50: #F8FAFC;
+  --color-gray-100: #F1F5F9;
+  --color-gray-200: #E2E8F0;
+  --color-gray-400: var(--color-text-muted);
+  --color-gray-600: var(--color-text-secondary);
+  --color-gray-700: #64748B;
+  --color-gray-800: var(--color-surface-light);
+  --color-gray-900: var(--color-primary-navy);
+
+  --color-white: #FFFFFF;
+  --color-black: var(--color-surface-dark);
+}
+
+/* Estilos específicos para elementos do site */
+body {
+  background: linear-gradient(135deg, var(--color-surface-dark) 0%, var(--color-primary-dark) 50%, var(--color-primary-navy) 100%);
+  color: var(--color-text-primary);
+  min-height: 100vh;
+}
+
+/* Header com tema escuro */
+header {
+  background: rgba(11, 27, 47, 0.95) !important;
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 229, 255, 0.2) !important;
+}
+
+/* Cards com tema escuro */
+.bg-white {
+  background: var(--color-primary-navy) !important;
+  color: var(--color-text-primary) !important;
+}
+
+.bg-gray-50 {
+  background: var(--color-surface-light) !important;
+}
+
+.bg-blue-100,
+.bg-purple-100 {
+  background: linear-gradient(135deg, rgba(0, 229, 255, 0.1) 0%, rgba(0, 188, 212, 0.1) 100%) !important;
+}
+
+/* Textos */
+.text-gray-600 {
+  color: var(--color-text-secondary) !important;
+}
+
+.text-gray-700 {
+  color: var(--color-text-primary) !important;
+}
+
+.text-blue-600,
+.text-blue-700 {
+  color: var(--color-accent-cyan) !important;
+}
+
+/* Botões */
+.bg-blue-500,
+.bg-blue-600 {
+  background: linear-gradient(135deg, var(--color-accent-cyan) 0%, var(--color-accent-blue) 100%) !important;
+  color: var(--color-primary-dark) !important;
+  font-weight: 600;
+  text-shadow: none;
+}
+
+.bg-blue-500:hover,
+.bg-blue-600:hover {
+  background: linear-gradient(135deg, #00F5FF 0%, #00E5FF 100%) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 229, 255, 0.3);
+}
+
+/* Bordas */
+.border-blue-600 {
+  border-color: var(--color-accent-cyan) !important;
+}
+
+.border-gray-200 {
+  border-color: rgba(0, 229, 255, 0.2) !important;
+}
+
+/* Efeitos especiais para seções */
+section {
+  position: relative;
+  overflow: hidden;
+}
+
+section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, var(--color-surface-dark) 0%, var(--color-primary-dark) 100%);
+  z-index: -1;
+}
+
+/* Seções alternadas */
+section:nth-child(even)::before {
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary-navy) 100%);
+}
+
+/* Hero section especial */
+#hero {
+  background: linear-gradient(135deg, var(--color-surface-dark) 0%, var(--color-primary-dark) 50%, var(--color-primary-navy) 100%);
+  position: relative;
+}
+
+#hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(0, 229, 255, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Partículas e elementos decorativos */
+.blur-3xl {
+  background: radial-gradient(circle, var(--color-accent-cyan) 0%, transparent 70%) !important;
+  opacity: 0.3;
+}
+
+/* Badges e tags */
+.bg-blue-400,
+.bg-cyan-400 {
+  background: var(--color-accent-cyan) !important;
+  color: var(--color-primary-dark) !important;
+}
+
+/* Footer */
+footer {
+  background: var(--color-surface-dark) !important;
+  border-top: 1px solid rgba(0, 229, 255, 0.2) !important;
+}
+
+/* Animações com glow effect */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px var(--color-accent-cyan);
+  }
+  50% {
+    box-shadow: 0 0 20px var(--color-accent-cyan), 0 0 30px var(--color-accent-cyan);
+  }
+  100% {
+    box-shadow: 0 0 5px var(--color-accent-cyan);
+  }
+}
+
+.hover\:shadow-2xl:hover {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+/* Cursor customizado para combinar com o tema */
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* Stats e números com destaque especial */
+#estadisticas .text-4xl,
+#estadisticas .text-5xl {
+  background: linear-gradient(45deg, var(--color-accent-cyan), var(--color-accent-blue));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+/* Tecnologias com efeito especial */
+#tecnologias .bg-white {
+  background: linear-gradient(135deg, var(--color-primary-navy) 0%, var(--color-surface-light) 100%) !important;
+  border: 1px solid rgba(0, 229, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+#tecnologias .bg-white:hover {
+  border-color: var(--color-accent-cyan);
+  box-shadow: 0 10px 25px rgba(0, 229, 255, 0.2);
+  transform: translateY(-5px);
+}
+
+/* Títulos especiais - CTABanner "Pronto para Decolar" */
+h2:has(span:contains("Decolar")) {
+  background: linear-gradient(45deg, #FF6B35, #F7931E, #FFD23F) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  font-weight: 700 !important;
+  text-shadow: none !important;
+}
+
+/* Destacar especificamente a palavra "Decolar" */
+span:contains("Decolar") {
+  background: linear-gradient(45deg, #FF6B35, #F7931E, #FFD23F) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  font-weight: 800 !important;
+  display: inline-block !important;
+}
+
+/* CTA Section "Pronto para ter um site profissional" */
+h2:contains("Pronto para ter um site profissional") {
+  background: linear-gradient(45deg, #00E5FF, #00BCD4, #0097A7) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  font-weight: 700 !important;
+}
+
+/* Alternativa usando classes específicas */
+.cta-banner-title {
+  background: linear-gradient(45deg, #FF6B35, #F7931E, #FFD23F) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  font-weight: 700 !important;
+  animation: gradientShift 3s ease-in-out infinite alternate;
+}
+
+.cta-section-title {
+  background: linear-gradient(45deg, var(--color-accent-cyan), var(--color-accent-blue), #0097A7) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  font-weight: 700 !important;
+  animation: gradientShift 3s ease-in-out infinite alternate;
+}
+
+/* Animação para os gradientes */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
