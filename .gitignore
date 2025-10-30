@@ -94,6 +94,8 @@ public
 
 # Vite build output
 dist/
+
+# Build outputs
 build/
 
 # Rollup.js default build output
