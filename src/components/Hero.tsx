@@ -2,12 +2,30 @@ import { Button } from "./ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { TypingText } from "./TypingText";
 import { motion, useScroll, useTransform } from "motion/react";
+import { useState, useEffect } from "react";
 import { HERO_DATA, SECTION_IDS } from "../constants";
 
 export function Hero() {
   const { scrollY } = useScroll();
-  const y = useTransform(scrollY, [0, 500], [0, 150]);
-  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+  
+  // Diferentes valores para mobile e desktop - mobile demora muito mais para desaparecer
+  const yRange = isMobile ? [0, 800] : [0, 500];
+  const opacityRange = isMobile ? [200, 700] : [0, 2000]; // No mobile só começa a desaparecer após 200px
+  
+  const y = useTransform(scrollY, yRange, [0, 0]);
+  const opacity = useTransform(scrollY, opacityRange, [50, 50]);
 
   const scrollToContact = () => {
     const element = document.getElementById(SECTION_IDS.contact);
@@ -151,7 +169,7 @@ export function Hero() {
             />
             <motion.div
               whileHover={{ scale: 1.02, rotate: 1 }}
-              transition={{ duration: 0.3 }}
+              transition={{ duration: 1}}
             >
               <img 
                 src={HERO_DATA.image.src}
