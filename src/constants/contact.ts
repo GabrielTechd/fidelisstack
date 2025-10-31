@@ -14,12 +14,12 @@ export const CONTACT_DATA = {
     { 
       icon: Phone, 
       label: "Telefone", 
-      value: "(11) 9999-9999" 
+      value: "(61)98133-6977" 
     },
     { 
       icon: MapPin, 
       label: "Localização", 
-      value: "São Paulo, Brasil" 
+      value: "Brasília, DF, Brasil" 
     }
   ],
   
@@ -35,7 +35,7 @@ export const CONTACT_DATA = {
       },
       phone: {
         label: "Telefone",
-        placeholder: "(11) 99999-9999"
+        placeholder: "(99) 99999-9999"
       },
       message: {
         label: "Mensagem",
